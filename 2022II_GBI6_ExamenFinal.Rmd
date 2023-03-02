@@ -14,8 +14,7 @@ output:
       smooth_scroll: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{}
 ```
 
 ```{r echo = FALSE, results = 'asis'}
@@ -74,6 +73,11 @@ library(ComplexHeatmap); library(viridis)
 
 # [4.0 PUNTOS] 1. Pingüinos de Palmer
 
+```{r}
+install.packages("ggcorrplot")
+
+```
+
 La base de datos de esta pregunta contiene distintas mediciones para tres especies de pingüinos encontrados en el archipiélago de Palmer, en la Antártica. Estas tres especies son los Chinstrap, Gentoo y Adélie.
 
 ```{r echo = FALSE, results = 'asis'}
@@ -92,16 +96,18 @@ Puede revisar los datos de los pingüinos utilizando la instrucción `str()` o `
 skimr::skim(penguins)
 ```
 
-```{r}
-skimr::skim(penguins)
-
-```
-
 A continuación se muestra un ejemplo de análisis de la data de los pingüinos de Palmer:
 
 -   En la figura `p1` se tiene un errorplot donde el largo del pico es evaluado por cada especie e internamente por sexo del ave.
 
 -   En la figura `p2` se tiene un boxplot donde se compara el ancho del pico por cada especie.
+
+    ```{r}
+    ggcorrplot(corr, hc.order = TRUE, type = "lower",
+       lab = TRUE)
+
+
+    ```
 
 -   En la figura `p3` se tiene una regresión lineal donde se mide el efecto de la longitud del pico sobre el ancho y se desagrega por especie(fila) e isla (columnas).
 
@@ -149,9 +155,9 @@ ggarrange(p3, ggarrange(p1, p2, labels =c("b", "c"), nrow=2),
 
 ### [1.0 punto] 1.1. Interprete lo que se muestra en la figura anterior
 
-**INTERPRETACIÓN**
+En la grafiaca anterior se observo que
 
-### [3.0 puntos] 1.2. Genere dos gráficas `p4` y `p5`donde:
+### \*\* \*\*[3.0 puntos] 1.2. Genere dos gráficas `p4` y `p5`donde:
 
 -   `p4` es una regresión de `x: body_mass_g` y `y: flipper_length_mm`, que tiene inserto la ecuación de la regresión y el $R^2$. Asimismo tiene una coloración por sexo, y una separación por sexo e isla.
 
