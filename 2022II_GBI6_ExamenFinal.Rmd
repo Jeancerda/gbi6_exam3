@@ -14,9 +14,6 @@ output:
       smooth_scroll: yes
 ---
 
-```{}
-```
-
 ```{r echo = FALSE, results = 'asis'}
 image = "https://www.ikiam.edu.ec/wp-content/uploads/2021/12/logo-ikiam-1.png"
 cat(paste0('<center><img src="', image,  '"></center>')) 
@@ -94,6 +91,7 @@ Puede revisar los datos de los pingüinos utilizando la instrucción `str()` o `
 
 ```{r}
 skimr::skim(penguins)
+
 ```
 
 A continuación se muestra un ejemplo de análisis de la data de los pingüinos de Palmer:
@@ -155,9 +153,9 @@ ggarrange(p3, ggarrange(p1, p2, labels =c("b", "c"), nrow=2),
 
 ### [1.0 punto] 1.1. Interprete lo que se muestra en la figura anterior
 
-En la grafiaca anterior se observo que
+En la grafiaca anterior se observo que en las columnas se encuentran las isla1 isla2 isla 3 y en las filas superiores se encuentran el tipo de sexo1 sexo2 sexo3 lo que representa una diagrama de regresion entre islas y sexo
 
-### \*\* \*\*[3.0 puntos] 1.2. Genere dos gráficas `p4` y `p5`donde:
+###  l\*\* \*\*[3.0 puntos] 1.2. Genere dos gráficas `p4` y `p5`donde:
 
 -   `p4` es una regresión de `x: body_mass_g` y `y: flipper_length_mm`, que tiene inserto la ecuación de la regresión y el $R^2$. Asimismo tiene una coloración por sexo, y una separación por sexo e isla.
 
