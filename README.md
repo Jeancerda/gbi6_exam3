@@ -42,3 +42,10 @@ Biotecnologia
 
 
 Repositorio del curso de bioinformatica semestre  2023 
+
+## LIBRERIAS  UTILIZADOS 
+
+library(ggpmisc);
+library(ggplot2); 
+library(plotly); 
+library(palmerpenguins)
